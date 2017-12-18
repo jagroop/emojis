@@ -2,6 +2,8 @@
 
 This is a demo application to represent how we can handle emojies using php and mysql.
 
+![Screenshot](https://github.com/jagroop/php-emoji-demo/blob/master/screenshot.png)
+
 - Database: Change Database default collation as utf8mb4.
 
 - Table: Change table collation as CHARACTER SET utf8mb4 COLLATE utf8mb4_bin.
