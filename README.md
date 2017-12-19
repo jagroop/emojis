@@ -6,5 +6,5 @@
 
 # Packages Used
 
-- [EmojiPicker](https://github.com/OneSignal/emoji-picker)
+- [EmojiArea](https://github.com/mervick/emojionearea)
 - [EmojiOne](https://github.com/emojione/emojione)
