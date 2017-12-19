@@ -1,5 +1,9 @@
 <?php
 require 'vendor/autoload.php';
+require 'lib/php/autoload.php';
+use Emojione\Client;
+use Emojione\Ruleset;
+
 if (!function_exists('dd')) {
   function dd($data, $var_dump = false) {
     echo "<pre>";
@@ -26,8 +30,8 @@ $config = [
 
 $db = new \Buki\Pdox($config);
 
+$emojione = new Client(new Ruleset());
+
 $messages = $db->table('messages')
     ->select('*')
     ->getAll();
-
-// dd($messages);

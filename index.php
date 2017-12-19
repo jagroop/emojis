@@ -24,7 +24,7 @@ require 'init.php';
                 <div class="panel-body">
                     <div id="messagesList">
                       <?php foreach($messages as $message):?>
-                          <p><?php echo json_decode($message->message); ?></p>
+                          <p><?php echo $emojione->shortnameToImage($message->message); ?></p>
                           <hr>
                       <?php endforeach;?>
                     </div>
@@ -32,7 +32,7 @@ require 'init.php';
             </div>
 
             <!-- Form starts -->
-            <form action="ajax.php" method="POST" class="form-inline" role="form">
+            <form action="ajax.php" method="POST" role="form">
               <div class="form-group">
                 <input type="text" class="form-control" name="content" id="message" placeholder="Type your message here..." data-emojiable="true" autofocus required>
               </div>
@@ -47,6 +47,7 @@ require 'init.php';
 <script src="lib/js/util.js"></script>
 <script src="lib/js/jquery.emojiarea.js"></script>
 <script src="lib/js/emoji-picker.js"></script>
+<script src="lib/js/emojione.js"></script>
 <script>
   $(function() {
     // Initializes and creates emoji set from sprite sheet
@@ -63,12 +64,14 @@ require 'init.php';
     $('#renderMessage').click(function(e){
       e.preventDefault();
       var message = $('#message').val();
+      message = emojione.toShort(message);
       $.ajax({
         url : 'ajax.php',
         data : {content : message},
         method : 'POST',
         dataType: 'json',
         success : function(response){
+          message = emojione.toImage(message);
           html = '<p>' + message +'</p>';
           html += '<hr>';
 
