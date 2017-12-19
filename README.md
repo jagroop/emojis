@@ -1,8 +1,8 @@
-# Web Emojies Demo
+# Web Emojis Demo
 
 > PHP & Javascript
 
-![Emojies](https://github.com/jagroop/php-emoji-demo/blob/master/screenshot.png)
+![Emojis](https://github.com/jagroop/php-emoji-demo/blob/master/screenshot.png)
 
 # Packages Used
 
