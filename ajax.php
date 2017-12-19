@@ -1,8 +1,6 @@
 <?php
-
 require 'init.php';
-// dd($_POST);
-// header('Content-Type: application/json');
+
 $message = trim($_POST['content']);
 
 if($message != "")
